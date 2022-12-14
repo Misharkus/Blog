@@ -27,14 +27,15 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-12">
-            <h6 class="mb-3">
-              
-            </h6>
-            <form action="#" class="w-25">
-            <div class="form-group">
+            <form action="{{ route('admin.category.store') }}" method="POST" class="w-25">
+              @csrf
+                <div class="form-group">
                     <label>Назва</label>
-                    <input type="text" class="form-control" placeholder="Назва категорії">
-                  </div>
+                    <input type="text" class="form-control" name="title" placeholder="Назва категорії">
+                    @error('title')
+                      <div class="text-danger">Це поле необхідно заповнити</div>
+                    @enderror
+                </div>
                   <input type="submit" class="btn btn-primary" value="Додати">
             </form>
           </div>
