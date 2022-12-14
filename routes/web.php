@@ -25,6 +25,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix'=>'admin'], fun
         Route::get('/', IndexController::class)->name('admin.category.index');
         Route::get('/create', CreateController::class)->name('admin.category.create');
         Route::post('/', StoreController::class)->name('admin.category.store');
+        Route::get('/{category}', ShowController::class)->name('admin.category.show');
     });
 });
 
