@@ -19,7 +19,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Main'], function(){
 
 Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix'=>'admin'], function(){
     Route::group(['namespace'=>'Main'], function(){
-        Route::get('/', IndexController::class);
+        Route::get('/', IndexController::class)->name('admin.home');
     });
     Route::group(['namespace'=>'Post', 'prefix' => 'posts'], function(){
         Route::get('/', IndexController::class)->name('admin.post.index');
